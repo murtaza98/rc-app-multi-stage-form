@@ -26,7 +26,7 @@ export class SlashCommand implements ISlashCommand {
                         this.app.getLogger().error('TRIGGER_UNDEFINED');
                         return;
                     }
-                    const modal = await contactFormModal({ title: 'update Contact', modify, persistence, room: context.getRoom(), data: {}, read, http, state: 'first' });
+                    const modal = await contactFormModal({ title: 'Contact form', modify, persistence, room: context.getRoom(), data: {}, read, http, state: 'first' });
                     return modify.getUiController().openModalView(modal, { triggerId }, context.getSender());
                 }
                 case 'update': {
@@ -44,7 +44,8 @@ export class SlashCommand implements ISlashCommand {
                         MailingCountry: 'USA',
 
                     }
-                    const modal = await contactFormModal({ title: 'update Contact', modify, persistence, room: context.getRoom(), data, read, http, state: 'first' });
+                    // tslint:disable-next-line: max-line-length
+                    const modal = await contactFormModal({ title: 'Contact form', modify, persistence, room: context.getRoom(), data, read, http, state: 'first' });
                     return modify.getUiController().openModalView(modal, { triggerId }, context.getSender());
                 }
 

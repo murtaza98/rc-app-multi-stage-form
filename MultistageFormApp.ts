@@ -35,15 +35,15 @@ export class MultistageFormApp extends App {
             switch (actionId) {
                 case 'Continue': {
                     // tslint:disable-next-line: max-line-length
-                    const modal = await contactFormModal({ currViewId: value, title: 'update Contact', modify, persistence, room: context.getInteractionData().room, data: {}, read, http, state: 'second' });
+                    const modal = await contactFormModal({ currViewId: value, title: 'Contact form', modify, persistence, room: context.getInteractionData().room, data: {}, read, http, state: 'second' });
                     // tslint:disable-next-line: max-line-length
-                    return modify.getUiController().openModalView(modal, { triggerId: context.getInteractionData().triggerId }, context.getInteractionData().user);
+                    return modify.getUiController().updateModalView(modal, { triggerId: context.getInteractionData().triggerId }, context.getInteractionData().user);
                 }
                 case 'Previous': {
                     // tslint:disable-next-line: max-line-length
-                    const modal = await contactFormModal({ currViewId: value, title: 'update Contact', modify, persistence, room: context.getInteractionData().room, data: {}, read, http, state: 'first' });
+                    const modal = await contactFormModal({ currViewId: value, title: 'Contact form', modify, persistence, room: context.getInteractionData().room, data: {}, read, http, state: 'first' });
                     // tslint:disable-next-line: max-line-length
-                    return modify.getUiController().openModalView(modal, { triggerId: context.getInteractionData().triggerId }, context.getInteractionData().user);
+                    return modify.getUiController().updateModalView(modal, { triggerId: context.getInteractionData().triggerId }, context.getInteractionData().user);
                 }
             }
         } catch (err) {

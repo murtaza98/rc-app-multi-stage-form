@@ -11,5 +11,6 @@
     "name": "multistage-form",
     "nameSlug": "multistage-form",
     "classFile": "MultistageFormApp.ts",
-    "description": "multistage-form"
+    "description": "multistage-form",
+    "implements": []
 }
