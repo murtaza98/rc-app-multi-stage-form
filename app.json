@@ -1,0 +1,15 @@
+{
+    "id": "aa4748b6-dff7-425e-826a-b8156371442c",
+    "version": "0.0.1",
+    "requiredApiVersion": "^1.19.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "multistage-form",
+        "homepage": "multistage-form",
+        "support": "multistage-form"
+    },
+    "name": "multistage-form",
+    "nameSlug": "multistage-form",
+    "classFile": "MultistageFormApp.ts",
+    "description": "multistage-form"
+}
