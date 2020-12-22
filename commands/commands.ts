@@ -26,26 +26,11 @@ export class SlashCommand implements ISlashCommand {
                         this.app.getLogger().error('TRIGGER_UNDEFINED');
                         return;
                     }
-                    const modal = await contactFormModal({ title: 'Contact form', modify, persistence, room: context.getRoom(), data: {}, read, http, state: 'first' });
-                    return modify.getUiController().openModalView(modal, { triggerId }, context.getSender());
-                }
-                case 'update': {
-                    const triggerId = context.getTriggerId();
-                    if (!triggerId) {
-                        this.app.getLogger().error('TRIGGER_UNDEFINED');
-                        return;
-                    }
-                    const data = {
-                        FirstName: 'Chandler',
-                        LastName: 'Bing',
-                        MailingCity: 'NY',
-                        MailingState: 'MH',
-                        MailingPostalCode: '789',
-                        MailingCountry: 'USA',
 
+                    const data = {
+                        FirstName: 'Ken',
                     }
-                    // tslint:disable-next-line: max-line-length
-                    const modal = await contactFormModal({ title: 'Contact form', modify, persistence, room: context.getRoom(), data, read, http, state: 'first' });
+                    const modal = await contactFormModal({ title: 'Contact form', modify, persistence, room: context.getRoom(), data, read, http });
                     return modify.getUiController().openModalView(modal, { triggerId }, context.getSender());
                 }
 

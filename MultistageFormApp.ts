@@ -32,16 +32,19 @@ export class MultistageFormApp extends App {
         try {
             const data = context.getInteractionData();
             const { actionId, value } = data;
+
             switch (actionId) {
-                case 'Continue': {
+                case 'add_last_name': {
+                    if (!value) {
+                        return;
+                    }
+
+                    const data = {
+                        FirstName: 'New FirstName',
+                        LastName: 'Adams'
+                    }
                     // tslint:disable-next-line: max-line-length
-                    const modal = await contactFormModal({ currViewId: value, title: 'Contact form', modify, persistence, room: context.getInteractionData().room, data: {}, read, http, state: 'second' });
-                    // tslint:disable-next-line: max-line-length
-                    return modify.getUiController().updateModalView(modal, { triggerId: context.getInteractionData().triggerId }, context.getInteractionData().user);
-                }
-                case 'Previous': {
-                    // tslint:disable-next-line: max-line-length
-                    const modal = await contactFormModal({ currViewId: value, title: 'Contact form', modify, persistence, room: context.getInteractionData().room, data: {}, read, http, state: 'first' });
+                    const modal = await contactFormModal({ currViewId: value, title: 'Contact form', modify, persistence, room: context.getInteractionData().room, data, read, http });
                     // tslint:disable-next-line: max-line-length
                     return modify.getUiController().updateModalView(modal, { triggerId: context.getInteractionData().triggerId }, context.getInteractionData().user);
                 }
