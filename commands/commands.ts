@@ -5,8 +5,8 @@ import { contactFormModal } from '../modals';
 
 export class SlashCommand implements ISlashCommand {
     public command = 'multi-form';
-    public i18nParamsExample = 'create, update';
-    public i18nDescription = 'create, update';
+    public i18nParamsExample = 'create';
+    public i18nDescription = 'create';
     public providesPreview = false;
 
     constructor(private readonly app: IApp) { }
